@@ -1,0 +1,17 @@
+{
+  "name": "lp.rtls-replay",
+  "version": "1.0.0",
+  "description": "Replay PCAP session of RTLS Server activity",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashwin Agarwal",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.0",
+    "dgram": "^1.0.1",
+    "pcap-parser": "^0.2.1"
+  }
+}

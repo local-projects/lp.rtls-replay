@@ -1,0 +1,8 @@
+{
+  "IP_ADDRESS": "10.1.3.48",
+  "PORT": 8282,
+  "USE_MULTICAST": false,
+  "MULTICAST_ADDRESS": "N/A",
+  "PCAP_FILENAME": "session.pcap",
+  "DOES_LOOP": true
+}
