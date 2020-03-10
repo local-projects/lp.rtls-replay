@@ -8,4 +8,7 @@ Make sure to filter so that only the appropriate packets are captured (e.g. filt
 ## Playback
 Update the `default.json` configuration in `/config` to the appropriate values (i.e. your IP address, your PCAP file name, etc.)
 
-Then just do `npm start`!
+Then just do:
+
+    npm install
+    npm start
