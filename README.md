@@ -10,27 +10,27 @@ Update the `default.json` configuration in `/config` to the appropriate values.
 
 This utility supports two modes of operation: UDP Unicast and UDP Multicast. Set the configuration file appropriately according to the mode-specific instructions below:
 
-**Unicast**: A one-to-one sender-client UDP relationship. Your configuration will look similar to this:
+**Unicast**: A one-to-one sender-client UDP relationship. Your configuration will look similar to this. The address and port are the unicast address and port.
 
 ```json
 {
-  "IP_ADDRESS": "127.0.0.1", // unicast address
-  "PORT": 8282, // unicast port
+  "IP_ADDRESS": "127.0.0.1",
+  "PORT": 8282,
   "USE_MULTICAST": false,
   "PCAP_FILENAME": "session.pcap",
-  "DOES_LOOP": true // optional
+  "DOES_LOOP": true
 }
 ```
 
-**Multicast**: A one-to-many sender-client UDP relationship. Your configuration will look similar to this:
+**Multicast**: A one-to-many sender-client UDP relationship. Your configuration will look similar to this. The address and port are the multicast address and port.
 
 ```json
 {
-  "IP_ADDRESS": "234.5.6.7", // multicast address
-  "PORT": 8282, // multicast port
+  "IP_ADDRESS": "234.5.6.7",
+  "PORT": 8282,
   "USE_MULTICAST": true,
   "PCAP_FILENAME": "session.pcap",
-  "DOES_LOOP": true // optional
+  "DOES_LOOP": true
 }
 ```
 
