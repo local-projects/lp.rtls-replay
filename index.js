@@ -1,18 +1,20 @@
 const config = require("config");
 const dgram = require("dgram");
-const sender = dgram.createSocket("udp4");
+// The socket must allow addresses to be reused. Otherwise, multicast will not
+// work and multiple clients will not be able to connect.
+const sender = dgram.createSocket({ type: "udp4", reuseAddr: true });
 const pcapp = require("pcap-parser");
 
 const IP_ADDRESS = config.get("IP_ADDRESS");
 const PORT = config.get("PORT");
 const USE_MULTICAST = config.get("USE_MULTICAST") || false;
-const MULTICAST_ADDRESS = config.get("MULTICAST_ADDRESS");
 const PCAP_FILENAME = config.get("PCAP_FILENAME");
 const DOES_LOOP = config.get("DOES_LOOP") || true;
 
 sender.connect(PORT, IP_ADDRESS, () => {
   if (USE_MULTICAST) {
-    sender.addMembership(MULTICAST_ADDRESS);
+    sender.addMembership(IP_ADDRESS);
+    sender.setMulticastInterface(IP_ADDRESS); // ?
   }
 
   console.log("Connected to UDP client!");

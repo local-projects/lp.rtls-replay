@@ -6,9 +6,37 @@ To record, run the server and simultaneously capture the packets into a PCAP fil
 Make sure to filter so that only the appropriate packets are captured (e.g. filter by `port 8282`).
 
 ## Playback
-Update the `default.json` configuration in `/config` to the appropriate values (i.e. your IP address, your PCAP file name, etc.)
+Update the `default.json` configuration in `/config` to the appropriate values.
 
-Then just do:
+This utility supports two modes of operation: UDP Unicast and UDP Multicast. Set the configuration file appropriately according to the mode-specific instructions below:
 
-    npm install
-    npm start
+**Unicast**: A one-to-one sender-client UDP relationship. Your configuration will look similar to this:
+
+```json
+{
+  "IP_ADDRESS": "127.0.0.1", // unicast address
+  "PORT": 8282, // unicast port
+  "USE_MULTICAST": false,
+  "PCAP_FILENAME": "session.pcap",
+  "DOES_LOOP": true // optional
+}
+```
+
+**Multicast**: A one-to-many sender-client UDP relationship. Your configuration will look similar to this:
+
+```json
+{
+  "IP_ADDRESS": "234.5.6.7", // multicast address
+  "PORT": 8282, // multicast port
+  "USE_MULTICAST": true,
+  "PCAP_FILENAME": "session.pcap",
+  "DOES_LOOP": true // optional
+}
+```
+
+After your configuration files are set, then run the following commands in a terminal or command prompt:
+
+```bash
+npm install
+npm start
+```
