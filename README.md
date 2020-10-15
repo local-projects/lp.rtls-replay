@@ -3,7 +3,7 @@ Replay recorded PCAP sessions from the [RTLS server](http://github.com/local-pro
 
 ## Record
 To record, run the server and simultaneously capture the packets into a PCAP file (e.g. using Wireshark or `tcpdump`).
-Make sure to filter so that only the appropriate packets are captured (e.g. filter by `port 8282`).
+Make sure to filter so that only the appropriate packets are captured (e.g. filter by `ip.addr == 169.254.193.203 && udp.port == 8282` on Wireshark, where `169.254.193.203` is whatever address you are sending packets to).
 
 ## Playback
 Update the `default.json` configuration in `/config` to the appropriate values.
