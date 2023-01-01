@@ -10,7 +10,7 @@
   "author": "Ashwin Agarwal",
   "license": "ISC",
   "dependencies": {
-    "config": "^3.3.0",
+    "config": "^3.3.8",
     "dgram": "^1.0.1",
     "pcap-parser": "^0.2.1"
   }
